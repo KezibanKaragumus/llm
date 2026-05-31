@@ -1,0 +1,9 @@
+https://github.com/KezibanKaragumus/llm.git
+
+
+https://drive.google.com/drive/folders/1hcLnfX08eSx5sI48T3s-V1aVt85Enp-Z?usp=sharing
+
+
+
+drive bağlantısında models dahil tüm klasörler bulunmaktadır, githubda models klasörü eksiktir.
+
