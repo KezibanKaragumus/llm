@@ -1,0 +1,174 @@
+# Model Kartları (Model Cards)
+
+---
+
+# 1. SmolLM2-360M
+
+## Model Bilgisi
+
+- Model Adı: SmolLM2-360M-Instruct
+- Kaynak: HuggingFaceTB
+- Parametre Sayısı: 360M
+- Lisans: Apache 2.0
+
+## Görev
+
+Türkçe Danıştay kararlarının hukuki özetlenmesi.
+
+## Eğitim Verisi
+
+- Veri Seti: Danıştay Kararları Türkçe Hukuki Özetleme Veri Seti
+- Örnek Sayısı: 40
+- Dil: Türkçe
+- Görev Türü: Abstractive Summarization
+
+## Fine-Tuning Ayarları
+
+- Yöntem: QLoRA
+- Epoch: 3
+- Learning Rate: 2e-4
+- Batch Size: 1
+- Gradient Accumulation: 4
+- Max Length: 1024
+- Seeds: 42, 123, 2026
+
+## Performans
+
+3 seed ortalaması:
+
+- ROUGE-1: 0.1295
+- ROUGE-L: 0.0743
+- BLEU: 0.0811
+- GPU Bellek: 4.40 GB
+- Inference: 17182 ms/örnek
+
+## Bilinen Limitasyonlar
+
+- Küçük model kapasitesi
+- Uzun hukuki bağlamları korumakta zorlanabilir
+- Bazı özetlerde tekrar üretimi gözlenmiştir
+
+## Donanım Gereksinimi
+
+- Minimum GPU Belleği: ~5 GB
+- Google Colab T4 üzerinde çalıştırılmıştır
+
+---
+
+# 2. TinyLlama-1.1B
+
+## Model Bilgisi
+
+- Model Adı: TinyLlama-1.1B-Chat-v1.0
+- Kaynak: TinyLlama Team
+- Parametre Sayısı: 1.1B
+- Lisans: Apache 2.0
+
+## Görev
+
+Türkçe Danıştay kararlarının hukuki özetlenmesi.
+
+## Eğitim Verisi
+
+- Veri Seti: Danıştay Kararları Türkçe Hukuki Özetleme Veri Seti
+- Örnek Sayısı: 40
+- Dil: Türkçe
+
+## Fine-Tuning Ayarları
+
+- Yöntem: QLoRA
+- Epoch: 3
+- Learning Rate: 2e-4
+- Batch Size: 1
+- Gradient Accumulation: 4
+- Max Length: 1024
+- Seeds: 42, 123, 2026
+
+## Performans
+
+3 seed ortalaması:
+
+- ROUGE-1: 0.1118
+- ROUGE-L: 0.0681
+- BLEU: 0.0580
+- GPU Bellek: 1.90 GB
+- Inference: 12064 ms/örnek
+
+## Bilinen Limitasyonlar
+
+- Beklenenden düşük özetleme performansı
+- Bazı örneklerde eksik bilgi üretimi
+- Hukuki terminolojiyi tam koruyamama
+
+## Donanım Gereksinimi
+
+- Minimum GPU Belleği: ~2 GB
+- Google Colab T4 üzerinde çalıştırılmıştır
+
+---
+
+# 3. Qwen2.5-1.5B
+
+## Model Bilgisi
+
+- Model Adı: Qwen2.5-1.5B-Instruct
+- Kaynak: Qwen Team
+- Parametre Sayısı: 1.5B
+- Lisans: Apache 2.0
+
+## Görev
+
+Türkçe Danıştay kararlarının hukuki özetlenmesi.
+
+## Eğitim Verisi
+
+- Veri Seti: Danıştay Kararları Türkçe Hukuki Özetleme Veri Seti
+- Örnek Sayısı: 40
+- Dil: Türkçe
+
+## Fine-Tuning Ayarları
+
+- Yöntem: QLoRA
+- Epoch: 3
+- Learning Rate: 2e-4
+- Batch Size: 1
+- Gradient Accumulation: 4
+- Max Length: 1024
+- Seeds: 42, 123, 2026
+
+## Performans
+
+3 seed ortalaması:
+
+- ROUGE-1: 0.1822
+- ROUGE-L: 0.0977
+- BLEU: 0.4085
+- GPU Bellek: 3.91 GB
+- Inference: 26653 ms/örnek
+
+## Bilinen Limitasyonlar
+
+- Diğer modellere göre daha yavaş çıkarım
+- Daha yüksek GPU kullanımı
+- Küçük veri setlerinde aşırı öğrenme riski
+
+## Donanım Gereksinimi
+
+- Minimum GPU Belleği: ~4 GB
+- Google Colab T4 üzerinde çalıştırılmıştır
+
+---
+
+# Genel Sonuç
+
+Modeller arasında en yüksek performans Qwen2.5-1.5B tarafından elde edilmiştir.
+
+Performans sıralaması:
+
+1. Qwen2.5-1.5B
+2. SmolLM2-360M
+3. TinyLlama-1.1B
+
+TinyLlama'nın daha büyük olmasına rağmen SmolLM2'den düşük performans göstermesi dikkat çekici bir sonuçtur.
+
+Bu durum küçük veri setlerinde model mimarisinin ve ön eğitim verisinin parametre sayısından daha önemli olabileceğini göstermektedir.

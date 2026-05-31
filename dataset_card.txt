@@ -1,0 +1,122 @@
+# Veri Seti Kartı (Dataset Card)
+
+## Veri Seti Adı
+
+Danıştay Kararları Türkçe Hukuki Özetleme Veri Seti
+
+---
+
+## Amaç
+
+Bu veri seti, Türkçe idare hukuku alanındaki Danıştay kararlarının otomatik olarak özetlenmesi amacıyla oluşturulmuştur.
+
+Veri seti küçük ve orta ölçekli açık kaynak büyük dil modellerinin (LLM) hukuki metin özetleme performanslarını karşılaştırmak amacıyla hazırlanmıştır.
+
+---
+
+## Veri Kaynağı
+
+Kaynak metinler:
+
+- Danıştay kararları
+- Türkçe hukuki karar metinleri
+
+Özetler:
+
+- Öğretmen model (Teacher Model) tarafından üretilmiştir.
+- Nihai özetler manuel kontrol edilerek düzenlenmiştir.
+
+---
+
+## Veri Seti Boyutu
+
+Toplam örnek sayısı:
+
+40 karar – özet çifti
+
+Veri bölünmesi:
+
+| Bölüm | Örnek Sayısı |
+|---------|---------|
+| Train | 32 |
+| Validation | 4 |
+| Test | 4 |
+
+Bölme oranı:
+
+- %80 Eğitim
+- %10 Doğrulama
+- %10 Test
+
+---
+
+## Kategori Dağılımı
+
+Veri seti aşağıdaki kategorileri içermektedir:
+
+- Çevre
+- Disiplin
+- Eğitim
+- İhale
+- İmar
+- Kamu Personeli
+- Ruhsat ve Lisans
+- Sağlık
+- Sosyal Güvenlik
+- Vergi
+
+Her kategori yaklaşık olarak dört karar örneği içermektedir.
+
+---
+
+## Dil
+
+Türkçe
+
+---
+
+## Görev Türü
+
+Metin Özetleme (Abstractive Summarization)
+
+Girdi:
+
+Uzun hukuki karar metni
+
+Çıktı:
+
+6–8 cümlelik Türkçe hukuki özet
+
+---
+
+## Ön İşleme
+
+Veri seti oluşturulurken:
+
+- Karar metinleri temizlenmiştir
+- Gereksiz boşluklar kaldırılmıştır
+- Model giriş uzunlukları kontrol edilmiştir
+- Çok kısa yakalanan örnekler düzeltilmiştir
+
+---
+
+## Lisans
+
+Bu veri seti yalnızca akademik çalışma amacıyla hazırlanmıştır.
+
+---
+
+## Kısıtlar
+
+- Veri seti yalnızca 40 örnek içermektedir.
+- İnsan tarafından hazırlanmış altın standart özetler yerine öğretmen model özetleri kullanılmaktadır.
+- Sonuçlar geniş ölçekli hukuki veri setlerine doğrudan genellenemez.
+
+---
+
+## Olası Kullanım Alanları
+
+- Hukuki metin özetleme
+- Türkçe LLM benchmark çalışmaları
+- LoRA / QLoRA fine-tuning deneyleri
+- Edge cihazlar için küçük model değerlendirmeleri
